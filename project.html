@@ -17,64 +17,8 @@
 					<h1>This is my Projects Page <br><br> Full of my Hobbies/Classwork</h1>
 				</div>
 			</div>
-			<div class="roasting">
-				<h2> It's the Caesar Cipher </h2>
-				<p>
-					The Cesar cipher is a method of encrypting text. As a user inputs a value and changes it by using the ascii code from each charcter in the input, moving it via a specified amount. Ex. Hello would be changed to wtaad if changed by fourteen places.
-				</p>
-				<div class="text">
-					<label for="caesarInput">Input</label>
-				</div>
-				<div class="text">
-					<input id="caesarInput">
-				</div>
-				<div class="text">
-					<label for="caesarNumber">Now choose how far the letters will go</label> <br>
-				</div>
-				<div class="text">
-					<input id="caesarNumber" type="number" min="-99" max="99" step="1" value="14">
-				</div>
-				<div class="text" id="caesarButtons">
-					<button type="button" onclick="caesar(1)" class="buttons"> Encrypt </button>
-					<button type="button" onclick="caesar(-1)" class="buttons"> Decrypt </button>
-				</div>
-				<script>
-				function caesar(a) {
-				var input = document.getElementById("caesarInput").value;
-				var direction = (parseInt(document.getElementById("caesarNumber").value)) * a;
-				var output = "";
-				for (i = 0; i < input.length; i++) {
-				var inChar = input.charCodeAt(i);
-				if ((inChar >= 65 && inChar <= 90) || (inChar >= 97 && inChar <= 122)) {
-				var outCharPos = inChar + direction;
-				switch (true) {
-				case outCharPos < 65:
-				outCharPos = 91 - (65 - outCharPos);
-				break;
-				case outCharPos > 90 && inChar <= 90:
-				outCharPos = (outCharPos - 90) + 64;
-				break;
-				case outCharPos < 97 && inChar >= 97:
-				outCharPos = 123 - (97 - outCharPos);
-				break;
-				case outCharPos > 122:
-				outCharPos = (outCharPos - 122) + 96;
-				break;
-				default:
-				outCharPos = inChar + direction;
-				}
-				var outChar = String.fromCharCode(outCharPos);
-				output = output + outChar;
-				}
-				else {
-				output = output + input[i];
-				}
-				}
-				document.getElementById("caesarInput").value = (output);
-				}
-				</script>
-				<br>
-				
+			
+
 				<h2> Fidning the Average Test score </h2>
 				<p>
 					This is a Jave Script exercise that useses stored data and arrays to be used later. Getting the average will be calculated by the tests you have completed with an input prompt for each grade for each test. When the button is pressed the average should be calculated.
